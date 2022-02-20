@@ -43,7 +43,7 @@ class MainAdapter(private val context: Context): RecyclerView.Adapter<MainViewHo
             intent.putExtra("reputation",user.reputation)
             intent.putExtra("Badges_bronze",user.badge_counts.bronze)
             intent.putExtra("Badges_silver",user.badge_counts.silver)
-            intent.putExtra("Badges_gold",user.badge_counts.gold)
+            intent.putExtra("Badges_gold",users[position].badge_counts.gold)
             intent.putExtra("location",user.location)
             intent.putExtra("creation_date",user.creation_date)
             context.startActivity(intent)

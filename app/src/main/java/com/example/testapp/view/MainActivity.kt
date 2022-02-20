@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this, UserlistviewmodelFactory(MainRepository(retrofitService))).get(Userlistviewmodel::class.java)
         binding.rvUsers.adapter = adapter
 
-        viewModel.movieList.observe(this, Observer {
+        viewModel.userList.observe(this, Observer {
 
             Log.d(TAG, "onCreate: $it")
 

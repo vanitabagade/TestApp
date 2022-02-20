@@ -19,28 +19,29 @@ class DetailActivity : AppCompatActivity() {
         setContentView(view)
         //retrieve the data from intent
         var profilepic=intent.extras!!.get("profile_pic")
-        var username="Username"+"   "+intent.extras!!.get("user_name")
-        var reputation="Reputation"+"   "+intent.extras!!.get("reputation")
-        var toptags=intent.extras!!.get("reputation")
-        var badges_silver="Silver"+"   "+intent.extras!!.get("Badges_silver")
+        var username="Username:"+"   "+intent.extras!!.get("user_name")
+        var reputation="Reputation:"+"   "+intent.extras!!.get("reputation")
+        var badges_silver="Silver:"+"   "+intent.extras!!.get("Badges_silver")
         var badges_gold="Gold"+"   "+intent.extras!!.get("Badges_gold")
         var badges_bronze="Bronze"+"   "+intent.extras!!.get("Badges_bronze")
-        var location="Location"+"   "+intent.extras!!.get("location")
-        var creationdate="Creation date"+"   "+intent.extras!!.get("creation_date")
+        var location="Location:"+"   "+intent.extras!!.get("location")
+        var creationdate="Creation date:"+"   "+intent.extras!!.get("creation_date")
 
         //bind data to views
-        binding.tvUname.text= username.toString()
-        binding.tvReputation.text= reputation.toString()
-        binding.tvToptags.text= username.toString()
-        binding.tvBadgesSilver.text= badges_silver.toString()
-        binding.tvBadgesGold.text= badges_gold.toString()
-        binding.tvBadgesBronze.text= badges_bronze.toString()
-        binding.tvLocation.text= location.toString()
-        binding.tvCreationdate.text= creationdate.toString()
+        binding.tvUsername.text= intent.extras!!.get("user_name").toString()
+        binding.tvUname.text= username
+        binding.tvReputation.text= reputation
+        binding.tvBadgesSilver.text= badges_silver
+        binding.tvBadgesGold.text= badges_gold
+        binding.tvBadgesBronze.text= badges_bronze
+        binding.tvLocation.text= location
+        binding.tvCreationdate.text= creationdate
         Glide.with(this)
             .load(profilepic)
             .into(binding.ivProfilepic)
-
+        binding.ivBack.setOnClickListener {
+            finish()
+        }
     }
 
 
